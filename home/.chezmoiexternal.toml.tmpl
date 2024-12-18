@@ -42,7 +42,11 @@
     refreshPeriod = "672h"
     executable = true
 
-
+# [".local/bin/wezterm"]
+#     type = "file"
+#     url = {{ gitHubLatestReleaseAssetURL "wez/wezterm" "WezTerm-*-Ubuntu20.04.AppImage" | quote }}
+#     refreshPeriod = "672h"
+#     executable = true
 
 {{- if and (not .ephemeral) (not .headless) }}
 {{-   $fontDir := "" }}
