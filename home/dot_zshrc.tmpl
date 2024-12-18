@@ -83,7 +83,6 @@ export EDITOR=$HOME/.local/bin/nvim
 {{ else -}}
 export EDITOR=nvim
 {{ end -}}
-export GITHUB_ACCESS_TOKEN={{ onepasswordRead "op://Personal/GitHub Metadata Read-Only Access Token/credential" | trim }}
 export GOBIN=$HOME/.local/bin
 export GOPATH=$HOME
 export GO111MODULE=on
@@ -96,15 +95,10 @@ export RIPGREP_CONFIG_PATH=~/.config/ripgrep/config
 
 {{- if .personal }}
 
-export CHEZMOI_GITHUB_ACCESS_TOKEN={{ onepasswordRead "op://chezmoi/chezmoi GitHub API Token/credential" | trim }}
 {{- end }}
 
 {{- if .work }}
 
-export OBSTACLE_ENV=${HOME}/src/git.flarm.com/obstacle/obstacle_toolchain
-export KEY_PATH="${HOME}/Development Secrets and Keys/current"
-export TOOLCHAIN_PATH=${HOME}/toolchain_bin
-export IDF_TOOLS_PATH=${TOOLCHAIN_PATH}/esp32
 {{- end }}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
