@@ -1,5 +1,5 @@
 [user]
-	name = Tom Payne
+	name = Cameron Braid
 	email = {{ .email }}
 [advice]
 	addEmptyPathspec = false
@@ -99,11 +99,6 @@
 [trim]
 	bases = master,gh-pages
 {{- if .personal }}
-[url "git@github.com:chezmoi/"]
-	insteadOf = https://github.com/chezmoi/
-[url "git@github.com:twpayne/"]
-	insteadOf = https://github.com/twpayne/
-{{- end }}
 {{- $ghPath := lookPath "gh" }}
 {{- if $ghPath }}
 [credential "https://github.com"]

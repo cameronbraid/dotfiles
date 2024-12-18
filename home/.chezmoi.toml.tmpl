@@ -20,18 +20,18 @@
 {{- $hostname := .chezmoi.hostname -}}
 {{- if eq .chezmoi.os "darwin" -}}
 {{-   $computerName := output "scutil" "--get" "ComputerName" | trim -}}
-{{-   if eq $computerName "Tom’s Laptop" -}}
+{{-   /* if eq $computerName "Tom’s Laptop" -}}
 {{-     $hostname = "toms-laptop" -}}
 {{-   else if eq $computerName "Tom’s MacBook Air" -}}
 {{-     $hostname = "toms-mba" -}}
 {{-   else -}}
 {{-     $hostname = $computerName -}}
-{{-   end -}}
+{{-   end */ -}}
 {{- end -}}
 
-{{- if eq .chezmoi.os "windows" -}}
+{{-/*  if eq .chezmoi.os "windows" -}}
 {{-   $ephemeral = true -}}
-{{- end -}}
+{{- end*/ -}}
 
 {{- if not $ephemeral -}}
 {{-   if eq $hostname "legion" -}}
@@ -54,9 +54,9 @@
 {{-   end -}}
 {{- end -}}
 
-{{- $email := "twpayne@gmail.com" -}}
+{{- $email := "cameron@braid.com.au" -}}
 {{- if $work -}}
-{{-   $email = "tom.payne@flarm.com" -}}
+{{-   $email = "cameron@drivenow.com.au" -}}
 {{- end -}}
 
 [data]

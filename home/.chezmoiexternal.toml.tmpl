@@ -1,11 +1,3 @@
-[".config/nvim/pack/twpayne/start/vim-igc"]
-    type = "archive"
-    url = "https://github.com/twpayne/vim-igc/archive/master.tar.gz"
-    exact = true
-    stripComponents = 1
-    refreshPeriod = "168h"
-
-{{- if eq .osid "linux-ubuntu" }}
 
 [".local/bin/age"]
     type = "archive-file"
@@ -25,11 +17,6 @@
     executable = true
     path = "croc"
 
-[".local/bin/cue"]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "cue-lang/cue" (printf "cue_v*_%s_%s.tar.gz" .chezmoi.os .chezmoi.arch) | quote }}
-    executable = true
-    path = "cue"
 
 [".local/bin/eza"]
     type = "archive-file"
@@ -55,14 +42,7 @@
     refreshPeriod = "672h"
     executable = true
 
-[".local/bin/sqlc"]
-    type = "archive-file"
-    url = {{ gitHubLatestReleaseAssetURL "sqlc-dev/sqlc" (printf "sqlc_*_%s_%s.tar.gz" .chezmoi.os .chezmoi.arch) | quote }}
-    refreshPeriod = "672h"
-    executable = true
-    path = "sqlc"
 
-{{- end }}
 
 {{- if and (not .ephemeral) (not .headless) }}
 {{-   $fontDir := "" }}
