@@ -1,0 +1,1 @@
+s2idle tee /sys/power/mem_sleep
